@@ -1,0 +1,219 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-image: url(media/pagebg.jpeg);
+  background-size: cover;
+}
+
+header {
+
+  padding: 10px;
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+
+  h1 {
+    display: inline;
+    float: left;
+  }
+
+  p {
+    display: inline;
+    float: right;
+    padding-top: 10px;
+  }
+
+}
+
+#field {
+
+	background-color: #3CBCFC;
+  margin: 0 auto;
+	height: 500px;
+  width: 900px;
+	background-size: contain;
+	overflow: hidden;
+  position: relative;
+  border:   2px solid black;
+  cursor: url(media/crosshairs.png), auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .grass{
+    position:absolute;
+    background:url(media/back.png) bottom left no-repeat;
+     z-index:3;
+     width:900px;
+     height:180px;
+     bottom:0px;
+     pointer-events: none;
+  }
+
+  .tree{
+    position:absolute;
+    background:url(media/tree.png) top left no-repeat;
+    left:70px;
+    bottom:100px; 
+    width:173px;
+    height:260px;
+    z-index:4;
+    pointer-events: none;
+  }
+
+  #greenDuck {
+
+    background:url(media/greenDuck.png) 0px 0px no-repeat;
+    width:76px;
+    height:73px;  
+    position:absolute;
+    top:400px;
+    left:0;
+
+  }
+
+  #redDuck {
+
+    background:url(media/redDuck.png) 0px 0px no-repeat;
+    width:76px;
+    height:73px;  
+    position:absolute;
+    top:400px;
+    left:700px;
+
+  }
+
+  .level-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .startGame {
+    text-align: center;
+    padding: 200px;
+    display: none;
+  }
+
+  #level {
+    text-align: center;
+    display: none;
+    padding: 200px;
+  }
+
+  .youWin {
+    text-align: center;
+    display: none;
+    padding: 200px;
+
+      &:after {
+        content: 'click to go to next level';
+      }
+  }
+
+  .gameOver, .tryAgain {
+    text-align: center;
+    display: none;
+    padding: 200px;
+
+      &:after {
+        content: 'click to play again';
+      }
+  }
+
+  .score {
+
+  }
+
+  .bullets {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    display: none;
+
+     img {
+      width: 15px;
+     }
+  }
+
+  #dogIntro {
+    
+    width:124px;
+    height:130px;
+    background: url(media/dogIntro.png) 0px 0px no-repeat;
+    position:absolute;
+    left: -400px;
+    bottom: 0;
+
+  }
+
+  #dogLaugh {
+    
+    position: absolute;
+    width: 87px;
+    bottom: 0px;
+    left: 412px;
+    display: none;
+  }
+
+  #dogSprite {
+    width:138px;
+    height:113px;
+    background:url(media/dog.png) 0 0 no-repeat;
+    position:absolute;
+    bottom: 0;
+    left: 382px;
+    z-index:2;
+    display: none;
+  }
+  
+
+
+
+}//end of field
+
+.highScore {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    
+
+  .ducksShot, .ducksMissed {
+   display: inline-block;
+  }
+
+  .ducksShot {
+    color: #9C0914;
+  }
+
+  .ducksMissed {
+    color: #fff;
+  }
+
+  img {
+    display: inline;
+  }
+
+  h3 {
+    display: inline;
+  }
+
+}
+
+
+
